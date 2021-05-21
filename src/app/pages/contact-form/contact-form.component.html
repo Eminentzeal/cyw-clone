@@ -1,0 +1,57 @@
+<div class="container">
+    
+    <div class="row align-items-center">
+        <div class="col-md-7 pt-5 text-center">
+            <img src="https://picsum.photos/id/10/400/500" class="img-fluid" alt="">
+        </div>
+        
+        <div class="col-md-5 mx-auto py-4">
+            <div class="fs-1 text-center mt-2 mt-md-5 text-secondary">Contact Us</div>
+            <form class="d-flex flex-column shadow-lg p-3 p-md-5 rounded" [formGroup]="form" method="post" (ngSubmit)="onSubmit()">
+                <mat-form-field>
+                    <mat-label>Name</mat-label>
+                    <mat-icon matSuffix>person</mat-icon>
+                    <input matInput [formControl]="name" required>
+                    <mat-error *ngIf="name.invalid">Please enter your name</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Phone Number</mat-label>
+                    <mat-icon matSuffix>phone</mat-icon>
+                    <input matInput [formControl]="phone" placeholder="+234" required>
+                    <mat-error *ngIf="phone.invalid">Please enter valid phone number</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <mat-icon matSuffix>email</mat-icon>
+                    <input matInput [formControl]="email" placeholder="info@mihubnigeria.com" required>
+                    <mat-error *ngIf="email.invalid">Please enter a valid email</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Select Category</mat-label>
+                    <mat-select [formControl] ="category" required>
+                      <mat-option value="enquiry">Enquiry</mat-option>
+                      <mat-option value="complaints">Complaints</mat-option>
+                      <mat-option value="support">Support</mat-option>
+                      <mat-option value="partnership">Partnership</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="category.invalid">Please select one category</mat-error>
+                  </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Message</mat-label>
+                    <mat-icon matSuffix>mode</mat-icon>
+                    <textarea matInput [formControl]="message" maxlength="256" placeholder="I'am interested in partnership..." required>
+
+                    </textarea>
+                    <mat-hint align="end"> {{message.value?.length || 0}}/256</mat-hint>
+                    <mat-error *ngIf="message.invalid">Please enter your message here</mat-error>
+                </mat-form-field>
+
+                <button [disabled]="isLoading" class="my-3" mat-raised-button color="primary">Submit</button>
+                <input [formControl]="honeypot" class="visually-hidden" type="text"/>
+                <div [ngClass]="!submitted? 'visually-hidden' : 'visually-visible'" class="text-center">
+                    <span class="text-danger">{{responseMessage}}</span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

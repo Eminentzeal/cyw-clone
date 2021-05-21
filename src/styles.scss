@@ -1,0 +1,96 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$cyw-primary: mat-palette($mat-light-blue, 700, 400, 200, 900);
+$cyw-accent: mat-palette($mat-teal, A700);
+$cyw-secondary: mat-palette($mat-lime, 900);
+
+
+// The warn palette is optional (defaults to red).
+$cyw-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$cyw-theme: mat-light-theme((
+  color: (
+    primary: $cyw-primary,
+    accent: $cyw-accent,
+    secondary: $cyw-secondary,
+    warn: $cyw-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($cyw-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+//syling the material icons
+// .material-icons {
+//   font-family: 'Material Icons';
+//   font-weight: normal;
+//   font-style: normal;
+//   font-size: 24px;  /* Preferred icon size */
+//   display: inline-block;
+//   line-height: 1;
+//   text-transform: none;
+//   letter-spacing: normal;
+//   word-wrap: normal;
+//   white-space: nowrap;
+//   direction: ltr;
+//   margin: 10px;
+
+//   /* Support for all WebKit browsers. */
+//   -webkit-font-smoothing: antialiased;
+//   /* Support for Safari and Chrome. */
+//   text-rendering: optimizeLegibility;
+
+//   /* Support for Firefox. */
+//   -moz-osx-font-smoothing: grayscale;
+
+//   /* Support for IE. */
+//   font-feature-settings: 'liga';
+// }
+
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: #01579b }
+.material-icons.md-dark.md-inactive { color: #3d586d; }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
