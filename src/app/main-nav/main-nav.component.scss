@@ -1,8 +1,12 @@
 .sidenav-container {
   height: 100%;
 }
-.nav * {
-  color: #fff;
+.nav {
+  color: #2B5597;
+  
+  .a {
+    font-size: 25px;
+  }
 }
 .sidenav {
   width: 250px;
@@ -12,7 +16,7 @@
   background: inherit;
 }
 
-.mat-toolbar.mat-primary * {
+.mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
   color: #fff;
@@ -25,6 +29,7 @@
 .spacer{
   flex: 1 1 auto;
 }
+
 a{
 text-decoration: none;
 }
@@ -37,4 +42,8 @@ text-decoration: none;
 }
 ::ng-deep.mat-menu-panel {
   max-width: none !important;
+}
+
+.btn {
+  border-radius: 34px;
 }

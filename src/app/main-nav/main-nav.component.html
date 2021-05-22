@@ -84,11 +84,12 @@
       </a>
       <div class="spacer"></div>
       <div fxHide.lt-md="true" class="nav">
-        <a mat-button color="" routerLink="" routerLinkActive="active">Home</a>
-        <a mat-button color="accent" >Buy Book</a>
-        <a mat-button color="accent" >Join Table/Register</a>
-        <a mat-button color="accent" >Sign In</a>
-        <a mat-button color="accent" [matMenuTriggerFor]="focus">Eng<mat-icon>keyboard_arrow_down</mat-icon>
+        <a mat-button routerLink="" routerLinkActive="active">Home</a>
+        <a mat-button >Buy Book</a>
+        <a mat-button >Join Table/Register</a>
+        <a mat-button >Sign In</a>
+        <a class="btn" mat-raised-button color="accent" >Take Assessment</a>
+        <a mat-button [matMenuTriggerFor]="focus">Eng<mat-icon>keyboard_arrow_down</mat-icon>
         </a>
         
         <mat-menu #focus="matMenu">

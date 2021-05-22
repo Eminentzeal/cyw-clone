@@ -1,5 +1,5 @@
 {
-  "name": "CYW-Clone",
+  "name": "cyw-clone",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
